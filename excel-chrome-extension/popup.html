@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Extensión</title>
+  <script src="popup.js" defer></script>
+  <script src="index.bundle.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      width: 320px;
+    }
+
+    .tab-container {
+      display: flex;
+      flex-direction: column;
+      width: 100px;
+      float: left;
+    }
+
+    .tab {
+      padding: 10px;
+      cursor: pointer;
+      background: #ddd;
+      border: 1px solid #bbb;
+      text-align: center;
+    }
+
+    .tab.active {
+      background: #59ad48;
+      font-weight: bold;
+    }
+
+    .content-container {
+      margin-left: 110px;
+      padding: 10px;
+      border: 1px solid #bbb;
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    input,
+    button,
+    textarea {
+      width: 100%;
+      margin: 5px 0;
+    }
+
+    button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+
+    .spinner {
+      display: none;
+      width: 24px;
+      height: 24px;
+      border: 3px solid #ccc;
+      border-top: 3px solid #000;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 10px auto;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="tab-container">
+    <div id="tab-export" class="tab active">Exportar</div>
+    <div id="tab-config" class="tab">Configuración</div>
+  </div>
+
+  <div class="content-container">
+    <div id="content-export" class="tab-content active">
+      <h2>Exportar a Excel</h2>
+      <label for="startDate">Fecha inicio:</label>
+      <input type="date" id="startDate">
+
+      <label for="endDate">Fecha fin:</label>
+      <input type="date" id="endDate">
+
+      <button id="exportExcel" disabled="true">Exportar</button>
+      <div id="spinner" class="spinner"></div>
+    </div>
+
+    <div id="content-config" class="tab-content">
+      <h2>Configuración</h2>
+      <label for="cookieName">Nombre de la cookie:</label>
+      <input type="text" id="cookieName" placeholder="Ejemplo: PHPSESSID">
+
+      <label for="cookieValue">Valor de la cookie:</label>
+      <textarea id="cookieValue" rows="2" placeholder="Pega aquí el valor"></textarea>
+
+      <label for="userId">UserID:</label>
+      <input type="text" id="userId" placeholder="Ejemplo: 12345">
+
+      <button id="saveConfig">Guardar</button>
+      <p id="status"></p>
+    </div>
+  </div>
+
+</body>
+
+</html>
