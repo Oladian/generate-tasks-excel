@@ -9,3 +9,7 @@
 #### 3º Mover index.bundle.js a la carpeta excel-chrome-extension
 
 #### 4º instalar en extensiones en modo desarrollador
+
+# O... la vía rápida
+
+### Usa el contenido de la carpeta excel-chrome-extension, instalándola como extensión de chrome
