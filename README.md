@@ -13,3 +13,15 @@
 # O... la vía rápida
 
 ### Usa el contenido de la carpeta excel-chrome-extension, instalándola como extensión de chrome
+
+
+# Cómo usarla:
+
+### Copia el nombre de la cookie y su valor
+![image](https://github.com/user-attachments/assets/0e0c7083-c653-4269-bc99-fa2a24f5b9b1)
+
+### Copia tu UserId, que debe venir al hacer consultas en la URL.
+
+### Pon el rango de fechas
+
+## ¡Exporta!
